@@ -1,6 +1,7 @@
 # Capistrano Apache
 
 Official Capistrano extension for Apache tasks.
+This replaces 1.0.0 of https://rubygems.org/gems/capistrano-apache. *It differs greatly in configuration.*
 
 ### Environments Supported
 |  | systemd | sysv & upstart |
