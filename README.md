@@ -7,7 +7,7 @@ This replaces 1.0.0 of https://rubygems.org/gems/capistrano-apache. *It differs 
 |  | systemd | sysv & upstart |
 | ---- | ------- | -------------- |
 | HTTPD | ```capistrano/apache/systemd/httpd``` | ```capistrano/apache/sysv_upstart/httpd``` |
-| APACHE2 | ```capistrano/apache/systemd/apache2``` | ```capistrano/apache/systemd/apache2``` |
+| APACHE2 | ```capistrano/apache/systemd/apache2``` | ```capistrano/apache/sysv_upstart/apache2``` |
 
 ## Installation
 
