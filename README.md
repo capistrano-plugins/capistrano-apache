@@ -1,6 +1,7 @@
 # Capistrano Apache
 
 Official Capistrano extension for Apache tasks.
+Supports httpd and apache2 (see Configuration below)
 This replaces 1.0.0 of https://rubygems.org/gems/capistrano-apache. *It differs greatly in configuration.*
 
 ### Environments Supported
