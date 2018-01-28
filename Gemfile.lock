@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capistrano-apache (0.0.1)
+    capistrano-apache (2.0.0)
       capistrano (~> 3.2)
 
 GEM
@@ -15,7 +15,7 @@ GEM
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
     concurrent-ruby (1.0.5)
-    i18n (0.9.1)
+    i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -33,4 +33,4 @@ DEPENDENCIES
   rake (~> 10.1)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
