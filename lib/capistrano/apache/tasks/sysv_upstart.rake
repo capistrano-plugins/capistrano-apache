@@ -1,37 +1,36 @@
-command = "/etc/init.d/#{fetch(:apache_service_name)}"
 namespace :apache do
   desc 'Reload apache'
   task :reload do
     on release_roles(fetch(:apache_roles)) do
-      fetch(:apache_with_sudo) ? execute(:sudo, command, 'reload') : execute(command, 'reload')
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'reload') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'reload')
     end
   end
 
   desc 'Force reload apache'
   task :force_reload do
     on release_roles(fetch(:apache_roles)) do
-      fetch(:apache_with_sudo) ? execute(:sudo, command, 'force-reload') : execute(command, 'force-reload')
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'force-reload') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'force-reload')
     end
   end
 
   desc 'Stop apache'
   task :stop do
     on release_roles(fetch(:apache_roles)) do
-      fetch(:apache_with_sudo) ? execute(:sudo, command, 'stop') : execute(command, 'stop')
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'stop') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'stop')
     end
   end
 
   desc 'Start apache'
   task :start do
     on release_roles(fetch(:apache_roles)) do
-      fetch(:apache_with_sudo) ? execute(:sudo, command, 'start') : execute(command, 'start')
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'start') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'start')
     end
   end
 
   desc 'Restart apache'
   task :restart do
     on release_roles(fetch(:apache_roles)) do
-      fetch(:apache_with_sudo) ? execute(:sudo, command, 'restart') : execute(command, 'restart')
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'restart') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'restart')
     end
   end
 end
