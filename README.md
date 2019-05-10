@@ -32,7 +32,6 @@ require 'capistrano/apache/systemd'
 * apache:force_reload
 * apache:restart
 * apache:stop
-* apache:zap
 
 You can execute the task on command line:
  
