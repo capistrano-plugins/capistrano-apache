@@ -33,7 +33,7 @@ require 'capistrano/apache/systemd'
 * apache:restart
 * apache:graceful
 * apache:stop
-* apache:graceful-stop
+* apache:graceful_stop
 
 You can execute the task on command line:
  
