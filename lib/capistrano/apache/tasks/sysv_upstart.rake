@@ -20,6 +20,13 @@ namespace :apache do
     end
   end
 
+  desc 'Gracefuly stop apache'
+  task :graceful_stop do
+    on release_roles(fetch(:apache_roles)) do
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'graceful-stop') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'graceful-stop')
+    end
+  end
+
   desc 'Start apache'
   task :start do
     on release_roles(fetch(:apache_roles)) do
@@ -31,6 +38,13 @@ namespace :apache do
   task :restart do
     on release_roles(fetch(:apache_roles)) do
       fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'restart') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'restart')
+    end
+  end
+
+  desc 'Gracefuly restart apache'
+  task :graceful do
+    on release_roles(fetch(:apache_roles)) do
+      fetch(:apache_with_sudo) ? execute(:sudo, "/etc/init.d/#{fetch(:apache_service_name)}", 'graceful') : execute("/etc/init.d/#{fetch(:apache_service_name)}", 'graceful')
     end
   end
 end

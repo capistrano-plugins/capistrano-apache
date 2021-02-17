@@ -20,6 +20,13 @@ namespace :apache do
     end
   end
 
+  desc 'Gracefuly stop apache (requires root access to apache stop)'
+  task :graceful_stop do
+    on release_roles(fetch(:apache_roles)) do
+      fetch(:apache_with_sudo) ? execute(:sudo, fetch(:systemctl_location), "graceful-stop #{fetch(:apache_service_name)}.service") : execute(fetch(:systemctl_location), "graceful-stop #{fetch(:apache_service_name)}.service")
+    end
+  end
+
   desc 'Start apache (requires root access to apache start)'
   task :start do
     on release_roles(fetch(:apache_roles)) do
@@ -31,6 +38,13 @@ namespace :apache do
   task :restart do
     on release_roles(fetch(:apache_roles)) do
       fetch(:apache_with_sudo) ? execute(:sudo, fetch(:systemctl_location), "restart #{fetch(:apache_service_name)}.service") : execute(fetch(:systemctl_location), "restart #{fetch(:apache_service_name)}.service")
+    end
+  end
+
+  desc 'Gracefuly restart apache (requires root access to apache restart)'
+  task :graceful do
+    on release_roles(fetch(:apache_roles)) do
+      fetch(:apache_with_sudo) ? execute(:sudo, fetch(:systemctl_location), "graceful #{fetch(:apache_service_name)}.service") : execute(fetch(:systemctl_location), "graceful #{fetch(:apache_service_name)}.service")
     end
   end
 end

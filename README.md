@@ -26,12 +26,14 @@ Require one of the above 'Environments Supported' in your `Capfile`:
 require 'capistrano/apache/systemd'
 ```
 
-`capistrano/apache` comes with 5 tasks:
+`capistrano/apache` comes with 7 tasks:
 
 * apache:reload
 * apache:force_reload
 * apache:restart
+* apache:graceful
 * apache:stop
+* apache:graceful_stop
 
 You can execute the task on command line:
  
